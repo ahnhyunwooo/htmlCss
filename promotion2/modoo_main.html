@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modoo!</title>
+    <link rel="stylesheet" type="text/css" href="./css/modoo.css">
+    <script src="./lib/jquery-3.6.0.js"></script>
+    <script src="./js/modoo.js"></script>
+    <script src="./lib/jstree.min.js"></script>
+</head>
+<body>
+    <div class="skip_nav">
+            <a href="#main" class="go_main">메인으로 가기</a>
+    </div>
+    <div class="wrap">
+        <header>
+            <div class="header_container">
+                <div class="header_links">
+                    <a href="#" class="header_link">
+                        <span class="blind">누구나 무료로 쉽게</span>
+                    </a>
+                    <a href="#" class="logo_link">
+                        <h1 class="blind">modo-o</h1>
+                    </a>
+                </div>
+                <div class="header_texts">
+                    <h2 class="hearder_text_title">우리 주변의<br> 단골 가게를 찾아보세요</h2>
+                    <div class="hearder_text_time">이벤트 기간 : 2016년 3월 22일 - 3월 31일</div>
+                    <p class="hearder_text_content">집앞에 좋은 가게가 많아지면 일상이 행복해져요.동네 가게를 이용하고, 다양한 혜택 받으세요</p>
+                </div>
+                <!--[D] 이미지 클릭 시 aria-selected를 true로 바꿔주세요.-->
+                <ul class="header_images_container" role="listbox">
+                    <span class="blind">섬네일</span>
+                    <li class="images_item" onclick="changeImage('1');" role="none">
+                        <img src="img/thumb_01.jpg" class="header_image" role="option" aria-selected="false" tabindex="0" alt="">
+                    </li>
+                    <li class="images_item" onclick="changeImage('2');" role="none">
+                        <img src="img/thumb_02.jpg" class="header_image" role="option" aria-selected="false" tabindex="0" alt="">
+                    </li>
+                    <li class="images_item" onclick="changeImage('3');" role="none">
+                        <img src="img/thumb_03.jpg" class="header_image" role="option" aria-selected="false" tabindex="0" alt="">
+                    </li>
+                    <li class="images_item" onclick="changeImage('4');" role="none">
+                        <img src="img/thumb_04.jpg" class="header_image" role="option" aria-selected="false" tabindex="0" alt="">
+                    </li>
+                    <li class="images_item" onclick="changeImage('5');" role="none">
+                        <img src="img/thumb_05.jpg" class="header_image" role="option" aria-selected="false" tabindex="0" alt="">
+                    </li>
+                    <li class="images_item" onclick="changeImage('6');" role="none">
+                        <img src="img/thumb_06.jpg" class="header_image" role="option" aria-selected="false" tabindex="0" alt="">
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <nav>
+            <!--[D] 탭 선택 시 aria-selected를 true로 바꿔주세요. 선택이 안된 탭은 false로 바꿔주세요 -->
+            <ul class="nav_container" role="tablist">
+                <li class="nav_item" role="none">
+                    <a class="nav_item_content" href="#" role="tab" aria-selected="true" aria-controls="tab_ui_area">
+                        <div class="nav_item_image_area"></div>
+                        <p class="nav_item_text">지역찾기</p>
+                    </a>
+                </li>
+                <li class="nav_item" role="none">
+                    <a class="nav_item_content" href="#" role="tab" aria-selected="false" aria-controls="tab_ui_business">
+                        <div class="nav_item_image_business"></div>
+                        <p class="nav_item_text">업종찾기</p>
+                    </a>
+                </li>
+                <li class="nav_item" role="none">
+                    <a class="nav_item_content" href="#" role="tab" aria-selected="false" aria-controls="tab_ui_university">
+                        <div class="nav_item_image_university"></div>
+                        <p class="nav_item_text">대학가 특집</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <main id="main">
+            <div class="tab_ui_area" id="tab_ui_area">
+                <div class="range_container">
+                    <div class="range_total">총
+                        <span class="range_num">56</span>개
+                    </div>
+                    <!--[D] 텍스트 클릭 시 span 태그 안에 active 클래스를 추가해 주세요. -->
+                    <div class="range_text">
+                        <button type="button" class="range_btn">
+                            <span class="range_popular active">인기순</span>
+                        </button>
+                        <button type="button" class="range_btn">
+                            <span class="range_other">가나다순</span>
+                        </button>
+                    </div>
+                </div>
+                <ul class="info_container">
+                    <li class="info_item">
+                        <div class="info_item_inner">
+                            <a href="#" class="info_item_title_link">
+                                <strong class="info_item_title">와이들헤어</strong>
+                            </a>
+                            <a href="#" class="info_item_link">
+                                <img src="./img/thumb_list.png" alt="" class="info_item_link_img">
+                            </a>
+                            <div class="info_item_content">
+                                <div class="info_item_text">22일부터 모든 펌, 염색시 헤어에센스 증정</div>
+                                <div class="info_item_time">사용기간 : 2015년 2월 22일 ~28일</div>
+                            </div>
+                            <div class="sub_container">
+                                <a href="#" class="sub_container_link">쿠폰</a>
+                                <a href="#" class="sub_container_link">오시는길</a>
+                                <a href="#" class="sub_container_link">전화</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="info_item">
+                        <div class="info_item_inner">
+                            <a href="#" class="info_item_title_link">
+                                <strong class="info_item_title">와이들헤어</strong>
+                            </a>
+                            <a href="#" class="info_item_link">
+                                <img src="./img/thumb_list.png" alt="" class="info_item_link_img">
+                            </a>
+                            <div class="info_item_content">
+                                <div class="info_item_text">22일부터 모든 펌, 염색시 헤어에센스 증정</div>
+                                <div class="info_item_time">사용기간 : 2015년 2월 22일 ~28일</div>
+                            </div>
+                            <div class="sub_container">
+                                <a href="#" class="sub_container_link">쿠폰</a>
+                                <a href="#" class="sub_container_link">오시는길</a>
+                                <a href="#" class="sub_container_link">전화</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="info_item">
+                        <div class="info_item_inner">
+                            <a href="#" class="info_item_title_link">
+                                <strong class="info_item_title">와이들헤어</strong>
+                            </a>
+                            <div class="info_item_content">
+                                <div class="info_item_text">2혼자오시면 10% 할인, 둘이 오시면 15% 할인, 셋이 오시면 20% 할인 다섯이 오시면 23% 할인 여섯이 오시면2혼자오시면 10% 할인, 둘이 오시면 15% 할인, 셋이 오시면 20% 할인 다섯이 오시면 23% 할인 여섯이 오시면2혼자오시면 10% 할인, 둘이 오시면 15% 할인, 셋이 오시면 20% 할인 다섯이 오시면 23% 할인 여섯이 오시면2혼자오시면 10% 할인, 둘이 오시면 15% 할인, 셋이 오시면 20% 할인 다섯이 오시면 23% 할인 여섯이 오시면2혼자오시면 10% 할인, 둘이 오시면 15% 할인, 셋이 오시면 20% 할인 다섯이 오시면 23% 할인 여섯이 오시면</div>
+                                <div class="info_item_time"></div>
+                            </div>
+                            <div class="sub_container">
+                                <a href="#" class="sub_container_link">오시는길</a>
+                                <a href="#" class="sub_container_link">전화</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="info_item">
+                        <div class="info_item_inner">
+                            <a href="#" class="info_item_title_link">
+                                <strong class="info_item_title">봉피양</strong>
+                            </a>
+                            <div class="info_item_content">
+                                <div class="info_item_text">후식으로 드립커피를 드려요</div>
+                                <div class="info_item_time"></div>
+                            </div>
+                            <div class="sub_container">
+                                <a href="#" class="sub_container_link">오시는길</a>
+                                <a href="#" class="sub_container_link">전화</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <a href="#" class="more_link">
+                    더보기
+                </a>
+            </div>
+            <div class="read_text">
+                <strong class="read_text_title">
+                    꼭 읽어주세요!
+                </strong>
+                <ul class="read_text_container">
+                    <li class="read_text_item">
+                        혜택(쿠폰/이벤트)은 발행한 가게/업체 사정으로 마감될 수 있습니다.이용 전에 쿠폰 버튼을 눌러 직접 확인해 주세요.
+                    </li>
+                    <li class="read_text_item">
+                        3월 축제 이벤트 당첨 시 네이버페이 포인트 지급예정일은 4월 8일이며, 지급 시 사전가입이 필요합니다. <a class="check" href="#">가입확인</a>
+                    </li>
+                    <li class="read_text_item important">
+                        유의사항 : 네이버 modoo!는 무료 서비스로, 텔레마케팅 또는 방문을 통한 영업을 일절하고 있지 않습니다.
+                    </li>
+                    <li class="read_text_item">
+                        - 네이버를 사칭하는 전화 영업에 주의해주세요. <a class="check" href="#">자세히보기</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="ad_container">
+                <div class="ad_register">
+                    <div class="ad_register_inner">
+                        <div class="ad_title">modoo! 가게가 있다면 지금 등록하세요</div>
+                        <form action="">
+                            <div class="form_container">
+                                <div class="text_container">
+                                    <input type="text" placeholder="내 가게 홈페이지 명" class="text_input">
+                                    <button type="submit" class="form_btn">등록</button>
+                                </div>
+                                <div class="text_checkbox_content">
+                                    <input type="checkbox" class="text_checkbox_input" checked>
+                                    입력하신 홈페이지가 이벤트 가게 목롤에 노출되는것을 동의합니다.
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="ad_public_container">
+                    <div class="ad_public">
+                        <div class="ad_public_image">
+                            <span class="blind">핸드폰</span>
+                        </div>
+                        <div class="ad_public_title">모두를<br>주변에 알려주세요</div>
+                        <p class="ad_public_content">
+                            본 이벤트를 즐겨찾기 하거나 하단 공유버튼을 통해 공유하시면 총 100분께 네이버페이 1만 포인트를 드려요
+                        </p>
+                    </div>
+                </div>
+                <div class="ad_go_container">
+                    <div class="ad_go_inner">
+                        <div class="ad_go_title">
+                            누구나 손쉽게 만들수 있는 modoo!
+                        </div>
+                        <p class="ad_go_content">아직 내 가게 홈페이지가 없다면 지금 바로 만드세요!</p>
+                        <a href="#" class="ad_go_link">지금 만들러가기</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab_ui_business" id="tab_ui_business"></div>
+            <div class="tab_ui_university" id="tab_ui_university"></div>
+        </main>
+        <footer>
+            <div class="footer_container">
+                <a href="#" class="footer_link_band">
+                    <span class="blind">band</span>
+                </a>
+                <a href="#" class="footer_link_line">
+                    <span class="blind">line</span>
+                </a>
+                <a href="#" class="footer_link_facebook">
+                    <span class="blind">facebook</span>
+                </a>
+                <a href="#" class="footer_link_blog">
+                    <span class="blind">blog</span>
+                </a>
+                <a href="#" class="footer_link_cafe">
+                    <span class="blind">cafe</span>
+                </a>
+                <a href="#" class="footer_link_kakao">
+                    <span class="blind">kakaotalk</span>
+                </a>
+            </div>
+            <div class="footer_copy">
+                <b>&#169; NAVER Corp.</b>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
